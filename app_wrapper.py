@@ -1,9 +1,10 @@
+import os 
+os.environ["KIVY_NO_CONSOLELOG"] = "1"
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from app_logic import YouTubeDownloader
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
-
 
 KV = '''
 MDScreen:
@@ -18,7 +19,6 @@ MDScreen:
         id : submit_button
         text : "DOWNLOAD"
         pos_hint : {'center_x': 0.5, 'center_y': 0.5}
-        on_press : md_bg_color = (1.0, 0.0, 0.0, 1.0)
 '''
 
 class MyApp(MDApp):
@@ -48,6 +48,7 @@ class MyApp(MDApp):
             text = "VIDEO SUCCESSFULLY DOWNLOADED"
         )
         dialog.open()
+
 
 if __name__ == '__main__':
     MyApp().run()
