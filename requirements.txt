@@ -1,2 +1,4 @@
 pytube==15.0.0
-streamlit
+kivy 
+kivymd 
+pyinstaller

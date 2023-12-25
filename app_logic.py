@@ -4,20 +4,21 @@ from pytube import YouTube
 class YouTubeDownloader:
 
     @classmethod 
-    def main(self):
+    def download_video(self, url):
 
-        url = input("VIDEO URL : ")
+        # url = input("VIDEO URL : ")
         
         youtubeObject = YouTube(url)
         youtubeObject = youtubeObject.streams.get_highest_resolution()
         
         
         try:
-            youtubeObject.download()
+            youtubeObject.download(r'C:\Users\sidkr\Downloads')
             print("Video succesfully downloaded.")
         except:
             print("An error has occurred.")
             
     
 if __name__ == "__main__":
-    YouTubeDownloader.main()
+    # YouTubeDownloader.main()
+    print("please import to use.")
