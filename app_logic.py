@@ -1,5 +1,6 @@
 import pytube
 from pytube import YouTube
+import os 
 
 class YouTubeDownloader:
 
@@ -11,9 +12,10 @@ class YouTubeDownloader:
         youtubeObject = YouTube(url)
         youtubeObject = youtubeObject.streams.get_highest_resolution()
         
+        path = os.path.expanduser('~user')
         
         try:
-            youtubeObject.download(r'C:\Users\sidkr\Downloads')
+            youtubeObject.download(path)
             print("Video succesfully downloaded.")
         except:
             print("An error has occurred.")
